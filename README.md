@@ -1,4 +1,6 @@
-# Releases hall of fame
+# Albums' hall of fame
+
+[![Visit website](screenshot.png)](https://albums-hall-of-fame.netlify.app/)
 
 Database with collected info:
 ![Airtable Database](./airtable.png)
