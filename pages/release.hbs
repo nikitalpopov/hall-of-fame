@@ -7,7 +7,7 @@ pagination:
   addAllPagesToCollections: true
 permalink: /release/{{ album.id }}/index.html
 eleventyComputed:
-  title: "{{ album.artist }} - {{ album.album }}"
+  title: "{{{ album.artist }}} - {{{ album.album }}}"
   rating: "{{ album.rating }}"
   artwork: "{{ album.artwork }}"
 ---
