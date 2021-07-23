@@ -1,16 +1,18 @@
 {{#if pagination.previousPageHref}}
-	<a href="{{ pagination.previousPageHref }}">&larr;</a>
+	<a class="underline hover:text-pink-500" href="{{ pagination.previousPageHref }}">&larr;</a>
 	&nbsp; &middot; &nbsp;
 {{/if}}
 {{#each pagination.hrefs}}
 	{{#if @index}}
 		&nbsp; &middot; &nbsp;
 	{{/if}}
-	<a href="{{ this }}" style="{{#if (eq ../pagination.pageNumber @index)}}font-weight: bold;{{/if}}">
-		Page {{ addOne @index }}
-	</a>
+	<a
+		href="{{ this }}"
+		class="underline hover:text-pink-500 {{#if (eq ../pagination.pageNumber @index)}}font-semibold{{/if}}"
+		style=""
+	>Page {{ addOne @index }}</a>
 {{/each}}
 {{#if pagination.nextPageHref}}
 	&nbsp; &middot; &nbsp;
-	<a href="{{ pagination.nextPageHref }}">&rarr;</a>
+	<a class="underline hover:text-pink-500" href="{{ pagination.nextPageHref }}">&rarr;</a>
 {{/if}}

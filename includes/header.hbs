@@ -1,18 +1,17 @@
-<h1>
-	{{title}}
-</h1>
-
-<ul>
-	<li>
-		<a href="/">
-			Home
+<div>
+	<div class="text-lg font-semibold my-4">
+		<a class="hover:text-pink-500" href="/">
+			Some favorite releases
 		</a>
-	</li>
-	{{#each collections.pages}}
-		<li>
-			<a href="{{ this.url }}">
-				{{ this.data.title }}
-			</a>
-		</li>
-	{{/each}}
-</ul>
+	</div>
+
+	<ul>
+		{{#each collections.pages}}
+			<li class="mb-1">
+				<a class="hover:underline hover:text-pink-500" href="{{ this.url }}">
+					{{ this.data.title }}
+				</a>
+			</li>
+		{{/each}}
+	</ul>
+</div>

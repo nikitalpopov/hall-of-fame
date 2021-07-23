@@ -1,17 +1,23 @@
 {
-  "name": "11ty-example",
+  "name": "music-reviews",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-	"build": "eleventy",
-    "start": "eleventy --serve",
+    "build": "eleventy",
+    "start": "eleventy --serve & postcss styles/tailwind.css --o _tmp/style.css --watch",
     "dev": "eleventy --serve --watch"
   },
-  "author": "",
+  "author": "Nikita Popov",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0",
-    "handlebars": "^4.6.0"
+    "@11ty/eleventy": "^0.12.1",
+    "airtable": "^0.11.1",
+    "autoprefixer": "^10.3.1",
+    "dotenv": "^10.0.0",
+    "handlebars": "^4.7.7",
+    "node-fetch": "^2.6.1",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.2.6"
   }
 }

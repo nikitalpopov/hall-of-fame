@@ -1,15 +1,15 @@
-# Eleventy/11ty Example
+# Releases hall of fame
 
-Minimal eleventy configuration with handlebars template engine
+Database with collected info:
+![Airtable Database](./airtable.png)
 
-Showcasing:
+## How to build
 
-- custom handlebars helpers
-- layout
-- partials
-- paginated data based pages (faq)
+Some environment variables should be defined in `.env` file in order to let script retrieve data from Airtable (see `.env.example`)
 
-
-## Run
-
-Run `npm run start` for serve command, `build` for gnerating htmls in public folder, `dev` for watching 11ty server.
+```sh
+# Retrieve data from Airtable
+> node retrieve-data.js
+# Build with eleventy
+> npm run build
+```

@@ -1,0 +1,7 @@
+# Generic
+node_modules
+.env
+
+#11ty
+public
+_site
