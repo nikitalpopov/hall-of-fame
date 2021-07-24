@@ -8,6 +8,8 @@ pagination:
 permalink: /release/{{ album.id }}/index.html
 eleventyComputed:
   title: "{{{ album.artist }}} - {{{ album.album }}}"
+  artist: "{{{ album.artist }}}"
+  release: "{{{ album.album }}}"
   rating: "{{ album.rating }}"
   artwork: "{{ album.artwork }}"
 ---

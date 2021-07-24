@@ -1,5 +1,5 @@
 <div class="flex flex-col h-full">
-	<div class="flex flex-grow-0 text-lg font-semibold my-4">
+	<div class="flex flex-grow-0 text-2xl font-semibold my-4">
 		<a class="hover:text-pink-500" href="/">
 			Some favorite releases
 		</a>
@@ -8,11 +8,10 @@
 	<div class="flex flex-grow overflow-y-auto">
 		<ul>
 			{{#each collections.pages}}
-				<li class="mb-1">
-					<a class="hover:underline hover:text-pink-500" href="{{ this.url }}">
-						<span class="hover:font-semibold">
-							{{ this.data.title }}
-						</span>
+				<li class="mb-2">
+					<a class="hover:text-pink-500" href="{{ this.url }}">
+                        <div class="text-gray-500">{{ this.data.artist }}</div>
+                        <div class="font-semibold">{{ this.data.release }}</div>
 					</a>
 				</li>
 			{{/each}}
