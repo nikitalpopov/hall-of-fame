@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "styles": "postcss styles/tailwind.css --o _tmp/style.css",
-    "build": "npm run styles & eleventy",
-    "start": "eleventy --serve & postcss styles/tailwind.css --o _tmp/style.css --watch",
+    "build": "npm run styles && eleventy",
+    "start": "eleventy --serve && postcss styles/tailwind.css --o _tmp/style.css --watch",
     "dev": "eleventy --serve --watch"
   },
   "author": "Nikita Popov",
