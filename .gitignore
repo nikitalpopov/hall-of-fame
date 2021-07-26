@@ -5,3 +5,4 @@ node_modules
 #11ty
 public
 _site
+_tmp
