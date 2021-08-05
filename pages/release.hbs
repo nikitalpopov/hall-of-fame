@@ -16,35 +16,35 @@ eleventyComputed:
 <div>
 	<div>
     <div class="flex text-2xl font-semibold">{{ title }}</div>
-      {{#if album.rating}}
-          <div class="flex items-center my-2">
-              <sl-tag
-                  class="inline-block"
-                  type="{{#if (eq album.releaseType "Album")}}danger{{/if}}{{#if (eq album.releaseType "EP")}}success{{/if}}{{#if (eq album.releaseType "Single")}}primary{{/if}}"
-                  size="small"
-                  pill
-              >
-                  {{ album.releaseType }}
-              </sl-tag>
-              <div class="inline-block mx-2 italic text-gray-500">{{ album.releaseDate }}</div>
-              <sl-rating class="inline-block" max="10" precision=".5" value="{{ album.rating }}" readonly></sl-rating>
-          </div>
-      {{/if}}
+        {{#if album.rating}}
+            <div class="flex items-center my-2">
+                <sl-tag
+                    class="inline-block"
+                    type="{{#if (eq album.releaseType "Album")}}danger{{/if}}{{#if (eq album.releaseType "EP")}}success{{/if}}{{#if (eq album.releaseType "Single")}}primary{{/if}}"
+                    size="small"
+                    pill
+                >
+                    {{ album.releaseType }}
+                </sl-tag>
+                <div class="inline-block mx-2 italic text-gray-500">{{ album.releaseDate }}</div>
+                <sl-rating class="inline-block" max="10" precision=".5" value="{{ album.rating }}" readonly></sl-rating>
+            </div>
+        {{/if}}
 
-      {{#if album.artwork}}
-          <img width="500" src="{{ album.artwork }}" />
-      {{/if}}
+        {{#if album.artwork}}
+            <img width="500" src="{{ album.artwork }}" />
+        {{/if}}
 
-      {{#if album.odesliLink}}
-          <iframe
-              width="500"
-              height="52"
-              src="https://embed.odesli.co/?url={{ album.odesliLink }}"
-              frameborder="0"
-              allowtransparency allowfullscreen
-              sandbox="allow-same-origin allow-scripts allow-presentation allow-popups allow-popups-to-escape-sandbox"
-          ></iframe>
-      {{/if}}
+        {{#if album.odesliLink}}
+            <iframe
+                width="500"
+                height="52"
+                src="https://embed.odesli.co/?url={{ album.odesliLink }}"
+                frameborder="0"
+                allowtransparency allowfullscreen
+                sandbox="allow-same-origin allow-scripts allow-presentation allow-popups allow-popups-to-escape-sandbox"
+            ></iframe>
+        {{/if}}
   </div>
 
 
