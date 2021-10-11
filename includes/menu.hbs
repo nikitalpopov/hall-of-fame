@@ -10,8 +10,8 @@
 			{{#each collections.pages}}
 				<li class="mb-2">
 					<a class="hover:text-pink-500" href="{{ this.url }}">
-                        <div class="text-gray-500">{{ this.data.artist }}</div>
-                        <div class="font-semibold">{{ this.data.release }}</div>
+						<div class="text-gray-500">{{ this.data.artist }}</div>
+						<div class="font-semibold">{{ this.data.release }}</div>
 					</a>
 				</li>
 			{{/each}}
@@ -19,8 +19,14 @@
 	</div>
 
 	<div class="flex flex-grow-0 mt-2">
-		<a href="https://github.com/nikitalpopov/hall-of-fame">
-			<sl-icon-button name="github" label="Settings"></sl-icon-button>
+		<a href="https://github.com/nikitalpopov/hall-of-fame" target="_blank">
+			<sl-icon-button src="https://albums-hall-of-fame.netlify.app/assets/github.svg" label="Github"></sl-icon-button>
+		</a>
+		<a href="https://www.last.fm/user/tapochek97" target="_blank">
+			<sl-icon-button src="https://albums-hall-of-fame.netlify.app/assets/lastfm.svg" label="Last.fm"></sl-icon-button>
+		</a>
+		<a href="https://open.spotify.com/user/htycnjdem0g6mob6l6351kzly" target="_blank">
+			<sl-icon-button src="https://albums-hall-of-fame.netlify.app/assets/spotify.svg"label="Spotify"></sl-icon-button>
 		</a>
 	</div>
 </div>
