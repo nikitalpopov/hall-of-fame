@@ -1,11 +1,11 @@
 <div class="flex flex-col h-full">
-	<div class="flex flex-grow-0 text-2xl font-semibold my-4">
+	<div class="flex flex-grow-0 text-2xl font-semibold my-4 px-1">
 		<a class="hover:text-pink-500" href="/">
 			Some favorite releases
 		</a>
 	</div>
 
-	<div class="flex flex-grow overflow-y-auto">
+	<div class="flex flex-grow overflow-y-auto p-1">
 		<ul>
 			{{#each collections.pages}}
 				<li class="mb-2">
@@ -18,7 +18,7 @@
 		</ul>
 	</div>
 
-	<div class="flex flex-grow-0 mt-2">
+	<div class="flex flex-grow-0 mt-2 px-1">
 		<a href="https://github.com/nikitalpopov/hall-of-fame" target="_blank">
 			<sl-icon-button src="https://albums-hall-of-fame.netlify.app/assets/github.svg" label="Github"></sl-icon-button>
 		</a>

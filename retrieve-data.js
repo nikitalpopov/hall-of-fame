@@ -22,7 +22,8 @@ const getReleases = async () => {
             review: record.fields['Review'],
             releaseType: record.fields['Release type'],
             odesliLink: record.fields['Odesli'],
-            musicBrainzLink: record.fields['MusicBrainz']
+            musicBrainzLink: record.fields['MusicBrainz'],
+            spotifyId: record.fields['Spotify']
         }));
 
         fs.writeFileSync('./_data/releases.json', JSON.stringify(releases));

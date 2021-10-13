@@ -6,10 +6,16 @@
 	<meta charset="utf-8">
 	<meta name="author" content="Nikita Popov">
 	<meta name="description" content="Favorite releases list">
+	<meta name="viewport" content="width=device-width, initial-scale=0.6">
+	<meta name="twitter:url" content="https://albums-hall-of-fame.netlify.app/">
 	<meta name="twitter:title" content="{{ title }}">
 	<meta name="twitter:description" content="Favorite releases list">
+	<meta name="twitter:image" content="https://raw.githubusercontent.com/nikitalpopov/hall-of-fame/master/screenshot.png">
+	<meta name="og:type" content="website">
+	<meta name="og:url" content="https://albums-hall-of-fame.netlify.app/">
 	<meta name="og:title" content="{{ title }}">
 	<meta name="og:description" content="Favorite releases list">
+	<meta name="og:image" content="https://raw.githubusercontent.com/nikitalpopov/hall-of-fame/master/screenshot.png">
 
 	<link rel="icon" type="image/x-icon" href="/assets/favicon.ico"/>
 	<link rel="stylesheet" href="/assets/style.css">
@@ -21,13 +27,13 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.47/dist/themes/base.css">
 	<script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.47/dist/shoelace.js"></script>
 </head>
-<body class="h-screen w-screen">
+<body class="h-screen w-screen overflow-hidden">
 	<div class="container h-full w-full mx-auto flex flex-row gap-4">
 		<div class="flex flex-col px-4 border-r-2" style="width: 264px;">
 			{{> menu}}
 		</div>
 
-		<div class="flex flex-col flex-1 px-4 mt-4">
+		<div class="flex flex-col flex-1 px-4 mt-4 overflow-x-auto">
 			{{{content}}}
 		</div>
 	</div>
