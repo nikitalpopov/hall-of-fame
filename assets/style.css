@@ -2,3 +2,11 @@ body {
 	font: 16px/24px Helvetica, Arial, Sans-Serif;
 	padding: 20px;
 }
+
+::selection {
+	background: rgba(246, 161, 206, 0.5);
+}
+
+img {
+	user-select: none;
+}

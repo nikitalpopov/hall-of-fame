@@ -27,6 +27,10 @@ const getReleases = async () => {
         }));
 
         fs.writeFileSync('./_data/releases.json', JSON.stringify(releases));
+
+        const ratings = [...new Set(releases.map(r => r.rating))].sort((a, b) => (b - a)).map(r => r.toString());
+
+        fs.writeFileSync('./_data/ratings.json', JSON.stringify(ratings));
     })
     .catch((err) => {
       console.log(err);

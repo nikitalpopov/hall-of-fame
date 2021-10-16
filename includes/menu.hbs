@@ -8,12 +8,14 @@
 	<div class="flex flex-grow overflow-y-auto p-1">
 		<ul>
 			{{#each collections.pages}}
+			{{#if (eq this.data.rating "10")}}
 				<li class="mb-2">
 					<a class="hover:text-pink-500" href="{{ this.url }}">
 						<div class="text-gray-500">{{ this.data.artist }}</div>
 						<div class="font-semibold">{{ this.data.release }}</div>
 					</a>
 				</li>
+			{{/if}}
 			{{/each}}
 		</ul>
 	</div>
