@@ -5,7 +5,7 @@ pagination:
     data: releases
     size: 1
     addAllPagesToCollections: true
-permalink: /release/{{ album.id }}/index.html
+permalink: /release/{{ album.spotifyId }}/index.html
 eleventyComputed:
     title: "{{{ album.artist }}} - {{{ album.album }}}"
     artist: "{{{ album.artist }}}"
@@ -18,11 +18,13 @@ eleventyComputed:
         <div class="flex flex-0 text-2xl font-semibold">{{ title }}</div>
         {{#if album.rating}}
         <div class="flex flex-0 items-center my-2">
-            <sl-tag class="inline-block" type="{{#if (eq album.releaseType "Album")}}danger{{/if}}{{#if (eq album.releaseType "EP" )}}success{{/if}}{{#if (eq album.releaseType "Single" )}}primary{{/if}}"
+            {{#if album.releaseType}}
+            <sl-tag class="inline-block mr-2" type="{{#if (eq album.releaseType "Album")}}danger{{/if}}{{#if (eq album.releaseType "EP" )}}success{{/if}}{{#if (eq album.releaseType "Single" )}}primary{{/if}}"
                 size="small" pill>
                 {{ album.releaseType }}
             </sl-tag>
-            <div class="inline-block mx-2 italic text-gray-500">{{ album.releaseDate }}</div>
+            {{/if}}
+            <div class="inline-block mr-2 italic text-gray-500">{{ album.releaseDate }}</div>
             <sl-rating class="inline-block" max="10" precision=".5" value="{{ album.rating }}" readonly></sl-rating>
         </div>
         {{/if}}
@@ -45,7 +47,7 @@ eleventyComputed:
                 </div>
 
                 {{#if album.odesliLink}}
-                <iframe height="52" width="500" src="https://embed.odesli.co/?url={{ album.odesliLink }}"
+                <iframe height="52" width="500" src="https://embed.odesli.co/?url=https://album.link/s/{{ album.spotifyId }}"
                     frameborder="0" loading="lazy" allowtransparency allowfullscreen
                     sandbox="allow-same-origin allow-scripts allow-presentation allow-popups allow-popups-to-escape-sandbox"></iframe>
                 {{/if}}
