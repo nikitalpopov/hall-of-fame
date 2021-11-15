@@ -12,6 +12,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPassthroughCopy({ './_tmp/style.css': './style.css' });
 
 	eleventyConfig.addPassthroughCopy('assets');
+	eleventyConfig.addPassthroughCopy('scripts');
 
 	return {
 		dir: {
