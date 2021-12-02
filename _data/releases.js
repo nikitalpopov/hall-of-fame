@@ -28,7 +28,7 @@ const mineOdesliData = async (odesliLink, release) => {
         artist: albumData.artistName,
         album: albumData.title,
         artwork: albumData.thumbnailUrl,
-        releaseType: albumData.albumType,
+        releaseType: albumData.albumType ?? albumData.type,
         releaseDate,
         odesliLink
       };

@@ -19,7 +19,7 @@ eleventyComputed:
         {{#if album.rating}}
         <div class="flex flex-0 items-center my-2">
             {{#if album.releaseType}}
-            <sl-tag class="inline-block mr-2" type="{{#if (eq album.releaseType "album")}}danger{{/if}}{{#if (eq album.releaseType "ep" )}}success{{/if}}{{#if (eq album.releaseType "single" )}}primary{{/if}}"
+            <sl-tag class="inline-block mr-2" type="{{#if (eq album.releaseType "album")}}danger{{/if}}{{#if (eq album.releaseType "ep" )}}success{{/if}}{{#if (eq album.releaseType "single" )}}primary{{/if}}{{#if (eq album.releaseType "song" )}}primary{{/if}}"
                 size="small" pill>
                 {{ album.releaseType }}
             </sl-tag>
