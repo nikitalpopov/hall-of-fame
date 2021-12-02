@@ -11,7 +11,7 @@ function generatePlaylistId() {
 
   if (window.location.pathname.includes("/playlist")) {
     const spotifyPlayer = document.getElementById("spotifyPlayer");
-    const id = Math.floor(Math.random() * (playlists.length - 1));
+    const id = Math.floor(Math.random() * playlists.length);
     if (spotifyPlayer) {
       spotifyPlayer.setAttribute("src", `https://open.spotify.com/embed/playlist/${playlists[id]}`);
     }

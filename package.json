@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "styles": "postcss styles/tailwind.css --o _tmp/style.css",
-    "build": "npm run styles && eleventy",
+    "styles": "postcss styles/tailwind.css --o _site/style.css",
+    "build": "eleventy && npm run styles",
     "start": "eleventy --serve && postcss styles/tailwind.css --o _tmp/style.css --watch",
     "dev": "eleventy --serve --watch"
   },
