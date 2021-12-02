@@ -20,6 +20,7 @@ const mineOdesliData = async (odesliLink, release) => {
         }-${
           ('0' + albumData.releaseDate.day).slice(-2)
         }`;
+      const releaseType = albumData.albumType ? albumData.albumType : albumData.type;
 
       const res = {
         ...release,
@@ -28,7 +29,7 @@ const mineOdesliData = async (odesliLink, release) => {
         artist: albumData.artistName,
         album: albumData.title,
         artwork: albumData.thumbnailUrl,
-        releaseType: albumData.albumType ?? albumData.type,
+        releaseType,
         releaseDate,
         odesliLink
       };
