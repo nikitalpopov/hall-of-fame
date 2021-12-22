@@ -9,7 +9,16 @@ const mineOdesliData = async (odesliLink, release) => {
     .then((markup) => {
       const $ = cheerio.load(markup, { xmlMode: false })
       const scriptData = $("#__NEXT_DATA__").get()[0].children[0].data;
-      const albumData = JSON.parse(scriptData).props.pageProps.pageData.entityData;
+      let albumData
+      try {
+        albumData = JSON.parse(scriptData).props.pageProps.pageData.entityData;
+        if (albumData === null || albumData === undefined) {
+          throw new Error('Failed to retrieve data');
+        }
+      } catch (e) {
+        throw e;
+      }
+
       const releaseDate =
         release.releaseDate
         ? release.releaseDate
@@ -21,17 +30,17 @@ const mineOdesliData = async (odesliLink, release) => {
           ('0' + albumData.releaseDate.day).slice(-2)
         }`;
       const releaseType = albumData.albumType ? albumData.albumType : albumData.type;
+      const diskType = new Date(releaseDate).getTime() >= new Date('2000-01-01') ? 'cd' : 'vinyl';
 
       const res = {
         ...release,
-        rating: release.rating,
-        review: release.review,
         artist: albumData.artistName,
         album: albumData.title,
         artwork: albumData.thumbnailUrl,
         releaseType,
         releaseDate,
-        odesliLink
+        odesliLink,
+        diskType
       };
       return res;
     });

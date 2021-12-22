@@ -6,7 +6,7 @@
   "scripts": {
     "styles": "postcss styles/tailwind.css --o _site/style.css",
     "build": "eleventy && npm run styles",
-    "start": "eleventy --serve && postcss styles/tailwind.css --o _tmp/style.css --watch",
+    "start": "npm run styles && eleventy --serve",
     "dev": "eleventy --serve --watch"
   },
   "author": "Nikita Popov",

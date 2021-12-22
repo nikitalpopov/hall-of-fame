@@ -7,6 +7,7 @@ function generatePlaylistId() {
     '76u87oiboPDaxEEWuuNlZn', // soviet
     '6P0FOkACTylNaub7NnrOOJ', // loopback
     '0ojaJFdHtsa0utaaYtqWZI', // грррлс
+    '4Ywf0XihVmBXzoBVfJi4Z5', // slow pace
   ];
 
   if (window.location.pathname.includes("/playlist")) {

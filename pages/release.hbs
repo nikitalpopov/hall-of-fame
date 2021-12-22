@@ -12,6 +12,7 @@ eleventyComputed:
     release: "{{{ album.album }}}"
     rating: "{{ album.rating }}"
     artwork: "{{ album.artwork }}"
+    diskType: "{{ album.diskType }}"
 ---
 <div class="h-full w-full">
     <div class="h-full w-full flex flex-col">
@@ -34,7 +35,12 @@ eleventyComputed:
                 <div class="flex flex-wrap gap-4">
 
                     {{#if album.artwork}}
-                    <img style="width: 100%; max-width: 500px;" height="500" width="500" src="{{ album.artwork }}" alt="Artwork" loading="lazy" />
+                    <div class="grid grid-cols-3 z-10">
+                        <img class="inline-grid row-start-1 row-end-1 col-start-1 col-end-3 z-10 h-full w-full max-w-500"
+                            height="500" width="500" src="{{ album.artwork }}" alt="Artwork" loading="lazy" />
+                        <img class="relative inline-grid row-start-1 row-end-1 col-start-2 col-end-4 z-0 w-full max-w-500 animate-spin-slow"
+                            height="500" width="500" src="https://albums-hall-of-fame.netlify.app/assets/{{ album.diskType }}.png" alt="Disk" loading="lazy" />
+                    </div>
                     {{/if}}
 
                     {{#if album.spotifyId}}
