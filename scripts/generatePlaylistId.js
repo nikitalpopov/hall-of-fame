@@ -1,20 +1,15 @@
 function generatePlaylistId() {
-  const playlists = [
-    '6YPylUVqvGdjZCHZjx1eRK', // electric
-    '1ya1ESCp6Ddwmd7vGUbg6n', // matryoshka
-    '1YaK3jHu4gAw7IsjKAqWMn', // groovy tunes
-    '5yYav5SK65hKRRC6iJxi3C', // tiger
-    '76u87oiboPDaxEEWuuNlZn', // soviet
-    '6P0FOkACTylNaub7NnrOOJ', // loopback
-    '0ojaJFdHtsa0utaaYtqWZI', // грррлс
-    '4Ywf0XihVmBXzoBVfJi4Z5', // slow pace
-  ];
-
   if (window.location.pathname.includes("/playlist")) {
-    const spotifyPlayer = document.getElementById("spotifyPlayer");
-    const id = Math.floor(Math.random() * playlists.length);
-    if (spotifyPlayer) {
-      spotifyPlayer.setAttribute("src", `https://open.spotify.com/embed/playlist/${playlists[id]}`);
-    }
+    fetch('https://personal-api-fnxy6.ondigitalocean.app/music-reviews/playlists')
+      .then(response => response.json())
+      .then(playlists => {
+        if (playlists.length) {
+          const spotifyPlayer = document.getElementById("spotifyPlayer");
+          const id = Math.floor(Math.random() * playlists.length);
+          if (spotifyPlayer) {
+            spotifyPlayer.setAttribute("src", `https://open.spotify.com/embed/playlist/${playlists[id]}`);
+          }
+        }
+      });
   }
 }
