@@ -1,6 +1,6 @@
 function generatePlaylistId() {
   if (window.location.pathname.includes("/playlist")) {
-    fetch('https://personal-api-fnxy6.ondigitalocean.app/music-reviews/playlists')
+    fetch('https://plankton-app-m6cri.ondigitalocean.app/music-reviews/playlists')
       .then(response => response.json())
       .then(playlists => {
         if (playlists.length) {
